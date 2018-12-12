@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/widget/basic/text.dart';
 
+/*入口函数*/
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -11,27 +12,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(title: "Flitter Sample"),
-    );
-  }
-}
-
-class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+      home: Scaffold(
         appBar: AppBar(
-          title: Text(widget.title),
+          title: Text("Text Widget"),
         ),
-        body: MyText());
+        body: MyText(),
+      ),
+    );
   }
 }

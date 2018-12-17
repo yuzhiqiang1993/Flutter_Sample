@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sample/widget/basic/text.dart';
+import 'package:flutter_sample/widget/basic/button.dart';
 
 /*入口函数*/
 void main() => runApp(MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Text Widget"),
         ),
-        body: MyText(),
+        body: MyButton(),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample/widget/basic/img.dart';
 import 'package:flutter_sample/widget/basic/text.dart';
 import 'package:flutter_sample/widget/basic/button.dart';
 
@@ -15,9 +16,9 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Text Widget"),
+          title: Text("Flutter"),
         ),
-        body: MyButton(),
+        body: ImgWidget(),
       ),
     );
   }

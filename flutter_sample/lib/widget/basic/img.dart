@@ -12,7 +12,6 @@ class ImgWidget extends StatelessWidget {
   }
 }
 
-
 /*加载本地图片*/
 class NativeImg extends StatelessWidget {
   @override

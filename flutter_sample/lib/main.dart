@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample/widget/basic/img.dart';
-import 'package:flutter_sample/widget/basic/text.dart';
-import 'package:flutter_sample/widget/basic/button.dart';
+import 'package:flutter_sample/widget/layout/align.dart';
+import 'package:flutter_sample/widget/layout/aspectRatio.dart';
+import 'package:flutter_sample/widget/layout/baseline.dart';
+import 'package:flutter_sample/widget/layout/constrained_box.dart';
+import 'package:flutter_sample/widget/layout/container.dart';
+import 'package:flutter_sample/widget/layout/fitted_box.dart';
+import 'package:flutter_sample/widget/layout/offstage.dart';
+import 'package:flutter_sample/widget/layout/overflow_box.dart';
+import 'package:flutter_sample/widget/layout/sized_box.dart';
+import 'package:flutter_sample/widget/layout/transform.dart';
 
 /*入口函数*/
 void main() => runApp(MyApp());
@@ -18,7 +25,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Flutter"),
         ),
-        body: ImgWidget(),
+        body: ContainerWidget(),
       ),
     );
   }

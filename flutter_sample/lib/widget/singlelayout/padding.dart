@@ -11,7 +11,7 @@ class MyPadding extends StatelessWidget {
       padding: EdgeInsets.all(30),
       child: Text(
         "Padding",
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: Colors.blueAccent),
       ),
     );
   }

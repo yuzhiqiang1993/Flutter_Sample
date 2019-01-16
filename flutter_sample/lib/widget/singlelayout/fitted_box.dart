@@ -12,7 +12,7 @@ class FittedBoxWidget extends StatelessWidget {
       width: 200,
       height: 100,
       child: FittedBox(
-        fit: BoxFit.fitHeight,
+        fit: BoxFit.fitWidth,
         child: Text("FittedBox"),
       ),
     );

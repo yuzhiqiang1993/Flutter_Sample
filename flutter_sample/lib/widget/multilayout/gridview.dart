@@ -1,87 +1,52 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/rendering/sliver.dart';
-import 'package:flutter/src/rendering/sliver_grid.dart';
 
 /*
 * 
 * 网格布局
 * */
-class GridViewWidget extends StatelessWidget {
+class GridViewWidget extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return GridViewCount();
+  State<StatefulWidget> createState() {
+
+    return _GridViewVBuilder();
   }
 }
 
-class GridViewNormal extends StatelessWidget {
+class _GridViewVBuilder extends State<GridViewWidget> {
+  List<int> indexs = List.generate(100, (index) {
+    return index;
+  });
+
   @override
   Widget build(BuildContext context) {
-    return GridView(
-      gridDelegate: GridDelegate(),
-      children: List.generate(
-        20,
-        (index) {
-          return Box(index + 1);
-        },
-      ),
+    return GridView.builder(
+      gridDelegate:
+          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5),
+      itemCount: indexs.length,
+      itemBuilder: (context, index) {
+        /*当数据加载完毕时 追加数据*/
+        if (index == indexs.length - 1) {
+          _addIndex();
+        }
+
+        return Text(
+          "$index",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.red,
+            fontSize: 20,
+          ),
+        );
+      },
     );
   }
-}
 
-class GridDelegate extends SliverGridDelegate {
-  @override
-  SliverGridLayout getLayout(SliverConstraints constraints) {
-    return null;
-  }
-
-  @override
-  bool shouldRelayout(SliverGridDelegate oldDelegate) {
-    // TODO: implement shouldRelayout
-    return null;
-  }
-}
-
-class GridViewCount extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return GridView.count(
-      padding: EdgeInsets.all(10),
-      crossAxisSpacing: 10,
-      crossAxisCount: 3,
-      mainAxisSpacing: 10,
-      children: List.generate(
-        20,
-        (index) {
-          return Box(index + 1);
-        },
-      ),
-    );
-  }
-}
-
-class Box extends StatelessWidget {
-  var index;
-
-  Box(var index) {
-    this.index = index;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-            colors: [Colors.orangeAccent, Colors.orange, Colors.deepOrange]),
-      ),
-      child: Text(
-        index.toString(),
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-    );
+  void _addIndex() {
+    /*这里要延时加载  否则会抱The widget on which setState() or markNeedsBuild() was called was:错误*/
+    Future.delayed(Duration(milliseconds: 200)).then((e) {
+      setState(() {
+        indexs.add(indexs.length + 1);
+      });
+    });
   }
 }

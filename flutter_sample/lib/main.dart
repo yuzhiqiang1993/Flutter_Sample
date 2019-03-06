@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample/widget/basic/text_field.dart';
 import 'package:flutter_sample/widget/bottom_nav/index_page.dart';
 
 /*入口函数*/
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.blue,
       ),
-      home: IndexPage(),
+      home: TextFieldWidget(),
     );
   }
 }

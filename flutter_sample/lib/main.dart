@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Flutter"),
         ),
-        body: GridViewWidget(),
+        body: FlowWidget(),
       ),
     );
   }

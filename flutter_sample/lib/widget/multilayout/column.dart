@@ -20,10 +20,10 @@ class ColumnWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
-          Box("1"),
-          Box("2"),
-          Box("3"),
-          Box("4"),
+//          Box("1"),
+//          Box("2"),
+//          Box("3"),
+//          Box("4"),
         ],
       ),
     );

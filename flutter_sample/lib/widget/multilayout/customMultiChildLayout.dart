@@ -6,7 +6,7 @@ class CustomMultiChildLayoutWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomMultiChildLayout(
       delegate: MultiChildDelegate(),
-      children: <Widget>[Box("1"),Box("2")],
+      children: <Widget>[],
     );
   }
 }
